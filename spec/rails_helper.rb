@@ -17,7 +17,7 @@ VCR.configure do |config|
   config.filter_sensitive_data('<YOUR DARK SKY API KEY HERE>') { ENV['DARK_SKY_API_KEY'] }
 end
 
-SimpleCov.start 'rails'
+SimpleCov.start
 
 begin
   ActiveRecord::Migration.maintain_test_schema!
