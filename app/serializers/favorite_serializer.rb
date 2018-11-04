@@ -1,4 +1,6 @@
 class FavoriteSerializer
   include FastJsonapi::ObjectSerializer
-  attributes 
+  attributes :location
+
+  belongs_to :user
 end
