@@ -2,7 +2,7 @@ class Api::V1::UsersController < ApplicationController
   before_action :new_user, :save_user, :validate_creation
 
   def create
-    render json: NewUserSerializer.new(new_user), status: 201
+    render json: UserSerializer.new(new_user), status: 201
   end
 
   private
