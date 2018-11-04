@@ -11,6 +11,6 @@ class User < ApplicationRecord
   private
 
   def generate_api_key
-    require 'pry'; binding.pry
+    update(api_key: SecureRandom.urlsafe_base64) if api_key.nil?
   end
 end
