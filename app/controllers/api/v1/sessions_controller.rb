@@ -1,5 +1,17 @@
 class Api::V1::SessionsController < ApplicationController
   def create
-    require 'pry'; binding.pry
+    user = User.find_by(email: session_params[:email])
+
+    if user && user.authenticate(session_params[:password])
+      render json: UserSerializer.new(user), status: 200
+    else
+      render json: nil, status: 403, message: 'Invalid credentials'
+    end
+  end
+
+  private
+
+  def session_params
+    params.permit(:email, :password)
   end
 end
