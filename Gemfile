@@ -16,6 +16,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'fast_jsonapi'
 gem 'faraday'
 gem 'figaro'
+gem 'bcrypt'
 
 
 group :development, :test do
