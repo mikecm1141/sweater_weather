@@ -6,6 +6,8 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
 
+  has_many :favorites
+
   after_save :generate_api_key
 
   private
