@@ -8,10 +8,10 @@ describe ImageResult do
   end
 
   context 'Instance Methods' do
-    context '#random_image' do
-      it 'returns a random image' do
+    context '#random_image_url' do
+      it 'returns a random image url' do
         VCR.use_cassette('random_image') do
-          expect(subject.random_image).to be_a(String)
+          expect(subject.random_image_url).to be_a(String)
         end
       end
     end

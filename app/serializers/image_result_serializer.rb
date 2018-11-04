@@ -2,5 +2,5 @@ class ImageResultSerializer
   include FastJsonapi::ObjectSerializer
   set_id :location_string
 
-  attributes :random_image
+  attributes :random_image_url
 end
