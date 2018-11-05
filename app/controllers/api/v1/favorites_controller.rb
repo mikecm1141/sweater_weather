@@ -1,8 +1,13 @@
 class Api::V1::FavoritesController < ApplicationController
-  before_action :find_user, :validate_api_key, :validate_location, :favorite
+  before_action :find_user, :validate_api_key
+  before_action :validate_location, :favorite, only: :create
 
   def create
     render json: FavoriteSerializer.new(favorite), status: 201
+  end
+
+  def index
+    render json: FavoritesSerializer.new(user.favorites), status: 200
   end
 
   private
