@@ -28,5 +28,19 @@ describe 'User deletes a favorite location' do
         expect(result[:data][0][:meta][:data][:attributes]).to have_key(:currently)
       end
     end
+
+    it 'requires an api key to complete or will fail' do
+      user = create(:user)
+      user.favorites.create(location: 'Denver, CO')
+      user.favorites.create(location: 'Honolulu, HI')
+
+      payload = {
+        location: 'Denver, CO'
+      }
+
+      delete '/api/v1/favorites', params: payload
+
+      expect(response.status).to eq(401)
+    end
   end
 end
