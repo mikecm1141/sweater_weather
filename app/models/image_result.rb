@@ -6,6 +6,12 @@ class ImageResult
   end
 
   def random_image_url
-    "random_image_url.jpg"
+    flickr_service.location_images(coordinates[:lat], coordinates[:lng])
+  end
+
+  private
+
+  def flickr_service
+    FlickrService.new
   end
 end
