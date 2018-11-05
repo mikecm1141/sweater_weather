@@ -1,12 +1,18 @@
 class Api::V1::FavoritesController < ApplicationController
   before_action :find_user, :validate_api_key
-  before_action :validate_location, :favorite, only: :create
+  before_action :validate_location, only: %i[create destroy]
+  before_action :favorite, only: :create
+  before_action :remove_favorite, only: :destroy
 
   def create
     render json: FavoriteSerializer.new(favorite), status: 201
   end
 
   def index
+    render json: FavoritesSerializer.new(user.favorites), status: 200
+  end
+
+  def destroy
     render json: FavoritesSerializer.new(user.favorites), status: 200
   end
 
@@ -31,6 +37,10 @@ class Api::V1::FavoritesController < ApplicationController
   end
 
   def favorite
-    find_user.favorites.find_or_create_by(location: favorite_params[:location])
+    user.favorites.find_or_create_by(location: favorite_params[:location])
+  end
+
+  def remove_favorite
+    user.remove_favorite_location(favorite_params[:location])
   end
 end
