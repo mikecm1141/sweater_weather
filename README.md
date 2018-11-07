@@ -1,5 +1,8 @@
 # Sweater Weather
 
+![alt text](https://img.shields.io/badge/ruby-%3E%3D%202.4.0-red.svg "Ruby")
+![alt text](https://img.shields.io/badge/rails-%3E%3D%205.1.0-red.svg "Ruby on Rails")
+
 ## Purpose
 
 This is a back-end API endpoint application that will power a separate front-end application. It retrieves current, hourly, and daily weather from the Dark Sky API, using coordinates generated from a user inputted location gathered from the Google Geocoder API. This application also has the ability to hit the Flickr photo API to display a location-based image.
