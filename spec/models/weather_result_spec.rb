@@ -55,7 +55,6 @@ describe WeatherResult do
           expect(subject.hourly[:data][0]).to have_key(:icon)
           expect(subject.hourly[:data][0]).to have_key(:precipIntensity)
           expect(subject.hourly[:data][0]).to have_key(:precipProbability)
-          expect(subject.hourly[:data][0]).to have_key(:precipType)
           expect(subject.hourly[:data][0]).to have_key(:temperature)
           expect(subject.hourly[:data][0]).to have_key(:apparentTemperature)
           expect(subject.hourly[:data][0]).to have_key(:dewPoint)
