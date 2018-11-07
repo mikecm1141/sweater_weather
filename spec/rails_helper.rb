@@ -8,6 +8,10 @@ require 'support/factory_bot'
 require 'webmock/rspec'
 require 'vcr'
 require 'simplecov'
+require 'codecov'
+
+SimpleCov.start
+SimpleCov.formatter = SimpleCov::Formatter::Codecov
 
 VCR.configure do |config|
   config.cassette_library_dir = 'fixtures/vcr_cassettes'
@@ -17,8 +21,6 @@ VCR.configure do |config|
   config.filter_sensitive_data('<YOUR DARK SKY API KEY HERE>') { ENV['DARK_SKY_API_KEY'] }
   config.filter_sensitive_data('<YOUR FLICKR API KEY HERE>') { ENV['FLICKR_API_KEY'] }
 end
-
-SimpleCov.start
 
 begin
   ActiveRecord::Migration.maintain_test_schema!
