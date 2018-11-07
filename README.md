@@ -3,6 +3,7 @@
 ![alt text](https://img.shields.io/badge/ruby-%3E%3D%202.4.0-red.svg "Ruby")
 ![alt text](https://img.shields.io/badge/rails-%3E%3D%205.1.0-red.svg "Ruby on Rails")
 [![Build Status](https://travis-ci.org/mikecm1141/sweater_weather.svg?branch=master)](https://travis-ci.org/mikecm1141/sweater_weather)
+[![Test Coverage](https://img.shields.io/badge/coverage-100%25-green.svg)](https://codecov.io/gh/mikecm1141/sweater_weather)
 
 ## Purpose
 
